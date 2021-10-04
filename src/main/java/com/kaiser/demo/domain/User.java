@@ -22,4 +22,13 @@ public class User {
 
     @ApiModelProperty(value = "用户年龄")
     private Integer age;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
