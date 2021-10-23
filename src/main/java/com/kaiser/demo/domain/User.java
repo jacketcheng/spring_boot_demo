@@ -4,8 +4,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
 @ApiModel(value = "用户表")
 public class User {
@@ -30,5 +28,32 @@ public class User {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    public static final class UserBuilderUpgrade{
+
+        private User user;
+
+        private UserBuilderUpgrade(){
+            user = new User();
+        }
+
+        public static UserBuilderUpgrade newBuilder(){
+            return new UserBuilderUpgrade();
+        }
+
+        public UserBuilderUpgrade name(String name) {
+            user.setName(name);
+            return this;
+        }
+
+        public UserBuilderUpgrade age(Integer age) {
+            user.setAge(age);
+            return this;
+        }
+
+        public User create() {
+            return user;
+        }
     }
 }

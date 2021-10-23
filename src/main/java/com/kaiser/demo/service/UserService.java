@@ -15,4 +15,6 @@ public interface UserService {
     Long updateUser(User user);
 
     boolean removeUser(Long id);
+
+    User builderUser(String name,Integer age);
 }

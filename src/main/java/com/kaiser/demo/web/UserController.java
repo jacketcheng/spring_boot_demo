@@ -64,4 +64,12 @@ public class UserController {
     public boolean removeUser(@PathVariable Long id) {
         return userService.removeUser(id);
     }
+
+    @PostMapping(value = "/buildUser")
+    public void buildUser(
+            @RequestParam(value = "name")String name,
+            @RequestParam(value = "age")Integer age
+    ) {
+        userService.builderUser(name, age);
+    }
 }
